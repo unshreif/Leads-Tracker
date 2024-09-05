@@ -5,7 +5,6 @@ document.getElementById("button").addEventListener("click", addSite);
 function addSite() {
     let site = document.getElementById('inputfield').value;
 
-    // Push the new site to the sites array
     sites.push(site);
 
     localStorage.setItem('sites', JSON.stringify(sites));
@@ -16,7 +15,6 @@ function addSite() {
     addsite.innerHTML = "<a href='" + site + "'>" + site + "</a>";
     list.appendChild(addsite);
 
-    // Clear the input field
     document.getElementById('inputfield').value = "";
 }
 
@@ -26,8 +24,9 @@ function show() {
     
     sites.forEach(site => {
         let addsite = document.createElement('li');
-        addsite.innerHTML = "<a href='" + site + "'>" + site + "</a>";
+        addsite.innerHTML = "<a href='" + site + "'>"  + site + "</a>";
         list.appendChild(addsite);
+        
     });
 }
 
